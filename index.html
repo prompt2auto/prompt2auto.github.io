@@ -78,11 +78,11 @@
                         <span class="icon">
                             <i class="fab fa-youtube"></i>
                         </span>
-                        <span>Video</span>
+                        <span>Videos</span>
                       </a>
                     </span>
 
-		<!-- dataset Link. -->
+		<!-- dataset Link.
                     <span class="link-block">
                       <a target="_blank" href="#"
                         class="external-link button is-normal is-rounded is-dark">
@@ -93,8 +93,8 @@
                       </a>
                     </span>
 
-                    <!-- Code Link. -->
-                    <span class="link-block">
+                    Code Link. -->
+                    <!-- <span class="link-block">
                       <a target="_blank" href="#"
                         class="external-link button is-normal is-rounded is-dark">
                         <span class="icon">
@@ -102,13 +102,16 @@
                         </span>
                         <span>Code</span>
                         </a>
-                    </span>
+                    </span> -->
                     </div>
                   </div>
                 </div>
         </div>
     </div>
   </div>
+
+  
+
 
     <!-- <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
@@ -143,7 +146,7 @@
     <br>
     <br>
     <div class="columns is-vcentered  is-centered">
-      <video id="teaser" autoplay muted loop height="60%" width="50%">
+      <video id="teaser" autoplay controls muted loop height="60%" width="50%">
         <source src="assets/videos/Intro_Video_GSC.mp4" type="video/mp4">
       </video>
       </br>
@@ -166,92 +169,474 @@ A dataset-construction strategy based on coordinate transformations is introduce
 Moreover, GeoGP is robust to variations in the user’s motion prompt and supports multi-skill autonomy.
 We validate the proposed approach through numerical simulations with the designed user graphical interface and two real-world robotic experiments, which demonstrate that the proposed method is effective, generalizes across tasks, and significantly reduces the demonstration burden.
           </p>
-          <br>
-          <p>
-			  <img src="assets/images/illustration.png" class="interpolation-image"
-              alt="" style="display: block; margin-left: auto; margin-right: auto" width="60%"/>
-          </p>
-        </div>
       </div>
     </div>
   </div>
 </div>
 </section>
 
-<section id="video_section" class="hero">
-<div class="hero-body">
-  <div class="container is-max-desktop">
+<section class="hero is-light">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <!-- Section -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">Geometry-Invariant One-Shot Gaussian Process</h2>
+          <div class="content has-text-justified">
+            <p style="font-size: 120%">
+            Our proposed algorithm, Prompt2Auto, follows a geometry-invariant one-shot learning pipeline. 
+            Given a human demonstration and a motion prompt, the data are first preprocessed and augmented 
+            through coordinate transformations, enforcing invariance to translation, rotation, and scaling. 
+            A scale factor is then calculated comparing the demonstration and the motion prompt, and applied to the prompt. 
+            The augmented data are used to train a GP model, which predicts the next state based on the scaled prompt. 
+            An inverse scale transformation is applied to recover the original scale of the prompt, and a Cartesian coordinate transformer maps the prediction back to the task space, 
+            resulting in a robust motion prediction that generalizes across varying task geometries.
 
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">GUI</h2>
+            </p>
+            <br>
+            <p>
+              <img src="assets/images/model.png" 
+                   alt="Method Overview" 
+                   style="display: block; margin-left: auto; margin-right: auto; width:100%;" />
+            </p>
+            <p class="has-text-centered is-italic" style="font-size: 95%">
+              Figure 1: Overview of the proposed Prompt2Auto framework.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
+</section>
 
-      <div class="columns is-centered has-text-centered">
-        <div class="item">
-          <div style="padding: 5%;">
-            <video poster="" id="" autoplay="" controls="" muted="" loop="" height="100%">
-              <source src="assets/videos/isaacsim.mp4" type="video/mp4">
+
+<section class="section">
+  <div class="container">
+    <h2 class="title is-3 has-text-centered">Numerical Simulation</h2>
+
+    <div class="columns is-multiline is-centered">
+
+      <!-- 循环生成视频卡片 -->
+      <!-- 一共 27 个（3 列 × 9 行） -->
+      <!-- 你只需要替换 src="assets/videos/simX.mp4" 和 <p>Task X</p> -->
+
+      <!-- 第1个视频 -->
+      <div class="column is-one-quarter">  <!-- 一行四个 -->
+        <div class="card">
+          <div class="card-image">
+            <video autoplay controls muted loop playsinline>
+              <source src="assets/videos/sim/a.mp4" type="video/mp4">
             </video>
-            <div class="content">
-              <!-- <p style="font-size: 125%;">
-                <b>SafeFlow (Ours)</b>
-              </p> -->
-            </div>
+          </div>
+          <div class="card-content has-text-centered">
+            <p>"a"</p>
           </div>
         </div>
       </div>
 
-
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-full-width">
-          <h2 class="title is-3">Teleoperation Case</h2>
-        </div>
-      </div>
-  
-        <div class="columns is-centered has-text-centered">
-          <div class="item">
-            <div style="padding: 5%;">
-              <video poster="" id="" autoplay="" controls="" muted="" loop="" height="100%">
-                <source src="assets/videos/manipulation.mov" type="video/mp4">
-              </video>
-              <div class="content">
-                <!-- <p style="font-size: 125%;">
-                  <b>SafeFlow (Ours)</b>
-                </p> -->
-              </div>
-            </div>
+      <!-- 第2个视频 -->
+      <div class="column is-one-quarter">  <!-- 一行四个 -->
+        <div class="card">
+          <div class="card-image">
+            <video autoplay controls muted loop playsinline>
+              <source src="assets/videos/sim/b.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="card-content has-text-centered">
+            <p>"b"</p>
           </div>
         </div>
-
-
-        <div class="columns is-centered has-text-centered">
-        <div class="column is-full-width">
-          <h2 class="title is-3">Skill Classification Case</h2>
-        </div>
       </div>
-  
-        <div class="columns is-centered has-text-centered">
-          <div class="item">
-            <div style="padding: 5%;">
-              <video poster="" id="" autoplay="" controls="" muted="" loop="" height="100%">
-                <source src="assets/videos/manipulation.mov" type="video/mp4">
-              </video>
-              <div class="content">
-                <!-- <p style="font-size: 125%;">
-                  <b>SafeFlow (Ours)</b>
-                </p> -->
-              </div>
-            </div>
+
+      <div class="column is-one-quarter">  <!-- 一行四个 -->
+        <div class="card">
+          <div class="card-image">
+            <video autoplay controls muted loop playsinline>
+              <source src="assets/videos/sim/c.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="card-content has-text-centered">
+            <p>"c"</p>
           </div>
         </div>
+      </div>
 
+      <div class="column is-one-quarter">  <!-- 一行四个 -->
+        <div class="card">
+          <div class="card-image">
+            <video autoplay controls muted loop playsinline>
+              <source src="assets/videos/sim/d.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="card-content has-text-centered">
+            <p>"d"</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-one-quarter">  <!-- 一行四个 -->
+        <div class="card">
+          <div class="card-image">
+            <video autoplay controls muted loop playsinline>
+              <source src="assets/videos/sim/e.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="card-content has-text-centered">
+            <p>"e"</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-one-quarter"> 
+        <div class="card">
+          <div class="card-image">
+            <video autoplay controls muted loop playsinline>
+              <source src="assets/videos/sim/f.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="card-content has-text-centered">
+            <p>"f"</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-one-quarter">  <!-- 一行四个 -->
+        <div class="card">
+          <div class="card-image">
+            <video autoplay controls muted loop playsinline>
+              <source src="assets/videos/sim/g.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="card-content has-text-centered">
+            <p>"g"</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-one-quarter">  <!-- 一行四个 -->
+        <div class="card">
+          <div class="card-image">
+            <video autoplay controls muted loop playsinline>
+              <source src="assets/videos/sim/h.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="card-content has-text-centered">
+            <p>"h"</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-one-quarter">  <!-- 一行四个 -->
+        <div class="card">
+          <div class="card-image">
+            <video autoplay controls muted loop playsinline>
+              <source src="assets/videos/sim/I.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="card-content has-text-centered">
+            <p>"I"</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-one-quarter">  <!-- 一行四个 -->
+        <div class="card">
+          <div class="card-image">
+            <video autoplay controls muted loop playsinline>
+              <source src="assets/videos/sim/J.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="card-content has-text-centered">
+            <p>"J"</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-one-quarter">  <!-- 一行四个 -->
+        <div class="card">
+          <div class="card-image">
+            <video autoplay controls muted loop playsinline>
+              <source src="assets/videos/sim/K.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="card-content has-text-centered">
+            <p>"k"</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-one-quarter"> 
+        <div class="card">
+          <div class="card-image">
+            <video autoplay controls muted loop playsinline>
+              <source src="assets/videos/sim/L.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="card-content has-text-centered">
+            <p>"L"</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-one-quarter">  <!-- 一行四个 -->
+        <div class="card">
+          <div class="card-image">
+            <video autoplay controls muted loop playsinline>
+              <source src="assets/videos/sim/m.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="card-content has-text-centered">
+            <p>"m"</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-one-quarter">  <!-- 一行四个 -->
+        <div class="card">
+          <div class="card-image">
+            <video autoplay controls muted loop playsinline>
+              <source src="assets/videos/sim/n.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="card-content has-text-centered">
+            <p>"n"</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-one-quarter">  <!-- 一行四个 -->
+        <div class="card">
+          <div class="card-image">
+            <video autoplay controls muted loop playsinline>
+              <source src="assets/videos/sim/o.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="card-content has-text-centered">
+            <p>"o"</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-one-quarter">  <!-- 一行四个 -->
+        <div class="card">
+          <div class="card-image">
+            <video autoplay controls muted loop playsinline>
+              <source src="assets/videos/sim/p.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="card-content has-text-centered">
+            <p>"p"</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-one-quarter"> 
+        <div class="card">
+          <div class="card-image">
+            <video autoplay controls muted loop playsinline>
+              <source src="assets/videos/sim/q.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="card-content has-text-centered">
+            <p>"q"</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="column is-one-quarter">  <!-- 一行四个 -->
+        <div class="card">
+          <div class="card-image">
+            <video autoplay controls muted loop playsinline>
+              <source src="assets/videos/sim/R.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="card-content has-text-centered">
+            <p>"R"</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-one-quarter">  <!-- 一行四个 -->
+        <div class="card">
+          <div class="card-image">
+            <video autoplay controls muted loop playsinline>
+              <source src="assets/videos/sim/s.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="card-content has-text-centered">
+            <p>"S"</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-one-quarter">  <!-- 一行四个 -->
+        <div class="card">
+          <div class="card-image">
+            <video autoplay controls muted loop playsinline>
+              <source src="assets/videos/sim/t.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="card-content has-text-centered">
+            <p>"t"</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-one-quarter">  <!-- 一行四个 -->
+        <div class="card">
+          <div class="card-image">
+            <video autoplay controls muted loop playsinline>
+              <source src="assets/videos/sim/u.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="card-content has-text-centered">
+            <p>"u"</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-one-quarter">  <!-- 一行四个 -->
+        <div class="card">
+          <div class="card-image">
+            <video autoplay controls muted loop playsinline>
+              <source src="assets/videos/sim/v.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="card-content has-text-centered">
+            <p>"v"</p>
+          </div>
+        </div>
+      </div>  
+
+      <div class="column is-one-quarter">  <!-- 一行四个 -->
+        <div class="card">
+          <div class="card-image">
+            <video autoplay controls muted loop playsinline>
+              <source src="assets/videos/sim/w.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="card-content has-text-centered">
+            <p>"w"</p>
+          </div>
+        </div>
+      </div>  
+
+      <div class="column is-one-quarter">  <!-- 一行四个 -->
+        <div class="card">
+          <div class="card-image">
+            <video autoplay controls muted loop playsinline>
+              <source src="assets/videos/sim/x.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="card-content has-text-centered">
+            <p>"x"</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-one-quarter">  <!-- 一行四个 -->
+        <div class="card">
+          <div class="card-image">
+            <video autoplay controls muted loop playsinline>
+              <source src="assets/videos/sim/y.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="card-content has-text-centered">
+            <p>"y"</p>
+          </div>
+        </div>
+      </div>  
+
+      <div class="column is-one-quarter">  <!-- 一行四个 -->
+        <div class="card">
+          <div class="card-image  ">
+            <video autoplay controls muted loop playsinline>
+              <source src="assets/videos/sim/z.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="card-content has-text-centered">
+            <p>"z"</p>
+          </div>
+        </div>
+      </div>
+      <!-- 按照这个格式，一直复制到 Task 27 -->
+      <!-- 这样就是 9 行，每行 3 个视频，共 27 个 -->
+
+    </div>
   </div>
-</div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="title is-3 has-text-centered">Classification Simulation</h2>
+
+    <div class="columns is-multiline is-centered video-row">
+      
+      <!-- 视频 1 -->
+      <div class="column is-half">
+        <div class="card">
+          <div class="card-image">
+            <video class="demo-video" autoplay controls muted loop playsinline>
+              <source src="assets/videos/sim/multiskill_classification.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+
+      <!-- 可以继续加 Task 3、Task 4，自动换行 -->
+      
+    </div>
+  </div>
 </section>
 
 
+<section class="section">
+  <div class="container">
+    <h2 class="title is-3 has-text-centered">Active Takeover Experiment</h2>
+
+    <div class="columns is-multiline is-centered video-row">
+      
+      <!-- 视频 1 -->
+      <div class="column is-half">
+        <div class="card">
+          <div class="card-image">
+            <video class="demo-video" autoplay controls muted loop playsinline>
+              <source src="assets/videos/sim/active_takeover/Active_Takeover.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+
+      <!-- 可以继续加 Task 3、Task 4，自动换行 -->
+      
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container">
+    <h2 class="title is-3 has-text-centered">Passive Takeover Experiment</h2>
+
+    <div class="columns is-multiline is-centered video-row">
+      
+      <!-- 视频 1 -->
+      <div class="column is-half">
+        <div class="card">
+          <div class="card-image">
+            <video class="demo-video" autoplay controls muted loop playsinline>
+              <source src="assets/videos/sim/passive_takeover/Passive_Takeover.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+
+      <!-- 可以继续加 Task 3、Task 4，自动换行 -->
+      
+    </div>
+  </div>
+</section>
 
 <section class="section" id="BibTeX">
   <div class="container is-max-widescreen content">
@@ -267,3 +652,4 @@ We validate the proposed approach through numerical simulations with the designe
 
 </body>
 </html>
+
